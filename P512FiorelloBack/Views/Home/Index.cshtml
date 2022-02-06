@@ -3,6 +3,15 @@
     ViewData["Title"] = "Main Page";
 }
 
+@section Css{
+
+    <link rel="stylesheet" href="~/assets/css/stle.css" />
+
+}
+@section Scripts{
+    <script src="~/assets/js/index.js" defer></script>
+}
+
 <header>
     <div class="row header-slider owl-carousel m-0" style="z-index: 0">
         @foreach (Slider slider in Model.Sliders)
@@ -30,13 +39,11 @@
                 <div class="col-12">
                     <div class="row product-type align-items-center">
                         <ul class="d-flex list-unstyled col-lg-6 justify-content-between">
-                            <li onclick="sortClick(this)" style="color:#f34f3f">ALL</li>
-                            <li onclick="sortClick(this, 'popular')">POPULAR</li>
-                            <li onclick="sortClick(this, 'winter')">WINTER</li>
-                            <li onclick="sortClick(this, 'various')">VARIOUS</li>
-                            <li onclick="sortClick(this, 'exotic')">EXOTIC</li>
-                            <li onclick="sortClick(this, 'greens')">GREENS</li>
-                            <li onclick="sortClick(this, 'cactuses')">CACTUSES</li>
+                            <li onclick="sortClick(this)" style="color:#f34f3f;cursor:pointer">ALL</li>
+                            @foreach (Category category in Model.Categories)
+                            {
+                                <li style="cursor:pointer" onclick="sortClick(this, '@category.Name.ToLower()')">@category.Name.ToUpper()</li>
+                            }
                         </ul>
                         <div class="col-6 categories">
                             <div class="d-flex align-items-center">
@@ -58,197 +65,17 @@
                 </div>
                 <div class="col-12 mt-2 categories-dropdown">
                     <ul class="list-unstyled">
-                        <li onclick="sortClick(this)" style="color:#f34f3f">ALL</li>
-                        <li onclick="sortClick(this, 'popular')">POPULAR</li>
-                        <li onclick="sortClick(this, 'winter')">WINTER</li>
-                        <li onclick="sortClick(this, 'various')">VARIOUS</li>
-                        <li onclick="sortClick(this, 'exotic')">EXOTIC</li>
-                        <li onclick="sortClick(this, 'greens')">GREENS</li>
-                        <li onclick="sortClick(this, 'cactuses')">CACTUSES</li>
+                        <li onclick="sortClick(this)" style="color:#f34f3f;cursor:pointer">ALL</li>
+                        @foreach (Category category in Model.Categories)
+                        {
+                            <li style="cursor:pointer" onclick="sortClick(this, '@category.Name.ToLower()')">@category.Name.ToUpper()</li>
+                        }
                     </ul>
                 </div>
 
                 <div class="flowers col-lg-12 mt-4">
-                    <div class="flowers-item popular">
-                        <div class="img">
-                            <img src="~/assets/images/MajestyPalm.jpeg" alt="" />
-                        </div>
-                        <div class="flower-body text-center">
-                            <p class="flower-name">MAJESTY PALM</p>
-                            <div class="flowers-title">
-                                <div class="addToCart" data-id="1" style="display: inline-block;">Add To Cart</div>
-                                <div class="price-container " style="display: inline-block;">
-                                    $
-                                    <span class="price">259</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flowers-item popular">
-                        <div class="img">
-                            <img src="~/assets/images/FoxGlove Flower.jpeg" alt="" />
-                        </div>
-                        <div class="flower-body text-center">
-                            <p class="flower-name">FOXGLOVE FLOWER</p>
-                            <div class="flowers-title">
-                                <div class="addToCart animate__animated" data-id="2">Add To Cart</div>
-                                <div class="price-container animate__animated">
-                                    $
-                                    <span class="price">259</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flowers-item popular">
-                        <div class="img">
-                            <img src="~/assets/images/Sweet Alyssum.jpeg" alt="" />
-                        </div>
-                        <div class="flower-body text-center">
-                            <p class="flower-name">SWEET ALYSSUM</p>
-                            <div class="flowers-title">
-                                <div class="addToCart animate__animated" data-id="3">Add To Cart</div>
-                                <div class="price-container animate__animated">
-                                    $
-                                    <span class="price">259</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flowers-item winter">
-                        <div class="img">
-                            <img src="~/assets/images/Spring Snowflake.jpeg" alt="" />
-                        </div>
-                        <div class="flower-body text-center">
-                            <p class="flower-name">SPRING SNOWFLAKE</p>
-                            <div class="flowers-title">
-                                <div class="addToCart animate__animated" data-id="4">Add To Cart</div>
-                                <div class="price-container animate__animated">
-                                    $
-                                    <span class="price">259</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flowers-item winter">
-                        <div class="img">
-                            <img src="~/assets/images/Scarlet Sage.jpeg" alt="" />
-                        </div>
-                        <div class="flower-body text-center">
-                            <p class="flower-name">SCARLET SAGE</p>
-                            <div class="flowers-title">
-                                <div class="addToCart animate__animated" data-id="5">Add To Cart</div>
-                                <div class="price-container animate__animated">
-                                    $
-                                    <span class="price">259</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flowers-item various">
-                        <div class="img">
-                            <img src="~/assets/images/Rock Soapwort.jpeg" alt="" />
-                        </div>
-                        <div class="flower-body text-center">
-                            <p class="flower-name">ROCK SOAPWORT</p>
-                            <div class="flowers-title">
-                                <div class="addToCart animate__animated" data-id="6">Add To Cart</div>
-                                <div class="price-container animate__animated">
-                                    $
-                                    <span class="price">259</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flowers-item various">
-                        <div class="img">
-                            <img src="~/assets/images/Summer Savory.jpeg" alt="" />
-                        </div>
-                        <div class="flower-body text-center">
-                            <p class="flower-name">SUMMER SAVORY</p>
-                            <div class="flowers-title">
-                                <div class="addToCart animate__animated" data-id="7">Add To Cart</div>
-                                <div class="price-container animate__animated">
-                                    $
-                                    <span class="price">259</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flowers-item exotic">
-                        <div class="img">
-                            <img src="~/assets/images/Wild Roses.jpeg" alt="" />
-                        </div>
-                        <div class="flower-body text-center">
-                            <p class="flower-name">WILD ROSES</p>
-                            <div class="flowers-title">
-                                <div class="addToCart animate__animated" data-id="8">Add To Cart</div>
-                                <div class="price-container animate__animated">
-                                    $
-                                    <span class="price">259</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flowers-item exotic">
-                        <div class="img">
-                            <img src="~/assets/images/WildCactus.jpeg" alt="" />
-                        </div>
-                        <div class="flower-body text-center">
-                            <p class="flower-name">WILD CACTUS</p>
-                            <div class="flowers-title">
-                                <div class="addToCart animate__animated" data-id="9">Add To Cart</div>
-                                <div class="price-container animate__animated">
-                                    $
-                                    <span class="price">259</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flowers-item greens">
-                        <div class="img">
-                            <img src="~/assets/images/cactusOrange.jpeg" alt="" />
-                        </div>
-                        <div class="flower-body text-center">
-                            <p class="flower-name">CACTUS IN ORANGE</p>
-                            <div class="flowers-title">
-                                <div class="addToCart animate__animated" data-id="10">Add To Cart</div>
-                                <div class="price-container animate__animated">
-                                    $
-                                    <span class="price">259</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flowers-item greens">
-                        <div class="img">
-                            <img src="~/assets/images/colorfulTulips.jpeg" alt="" />
-                        </div>
-                        <div class="flower-body text-center">
-                            <p class="flower-name">COLORFUL TULIPS</p>
-                            <div class="flowers-title">
-                                <div class="addToCart animate__animated" data-id="11">Add To Cart</div>
-                                <div class="price-container animate__animated">
-                                    $
-                                    <span class="price">350</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flowers-item cactuses">
-                        <div class="img">
-                            <img src="~/assets/images/pinkFLower.jpeg" alt="" />
-                        </div>
-                        <div class="flower-body text-center">
-                            <p class="flower-name">PINK FLOWER TREE</p>
-                            <div class="flowers-title">
-                                <div class="addToCart animate__animated" data-id="12">Add To Cart</div>
-                                <div class="price-container animate__animated">
-                                    $
-                                    <span class="price">180</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @await Html.PartialAsync("_FlowersPartialView",Model.Flowers)
+
                 </div>
             </div>
         </div>
