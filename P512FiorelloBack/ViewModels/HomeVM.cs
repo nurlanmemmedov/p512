@@ -11,6 +11,5 @@ namespace P512FiorelloBack.ViewModels
         public List<Slider> Sliders { get; set; }
         public List<Expert> Experts { get; set; }
         public List<Category> Categories { get; set; }
-        public List<Flower> Flowers { get; set; }
     }
 }

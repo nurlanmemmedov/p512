@@ -17,6 +17,13 @@ namespace P512FiorelloBack.Controllers
         {
             _context = context;
         }
+
+
+        public IActionResult Index()
+        {
+            return View();
+        }
+
         public IActionResult Detail(int id,int categoryId)
         {
             Flower flower = _context.Flowers.Include(f => f.FlowerImages).Include(f => f.FlowerCategories).ThenInclude(fc => fc.Category).FirstOrDefault(f => f.Id == id);
@@ -25,5 +32,16 @@ namespace P512FiorelloBack.Controllers
             ViewBag.Related = _context.Flowers.Where(f => f.FlowerCategories.FirstOrDefault(fc => fc.CategoryId == categoryId).CategoryId == categoryId && f.Id != flower.Id).Include(f=>f.FlowerImages).Include(f=>f.FlowerCategories).ThenInclude(fc=>fc.Category).ToList();
             return View(flower);
         }
+
+        public async Task<IActionResult> Search(string searchedStr)
+        {
+            if (string.IsNullOrWhiteSpace(searchedStr))
+            {
+                return PartialView("_SearchPartialView", new List<Flower>());
+            }
+            var flowers = await _context.Flowers.Where(f => f.Name.ToUpper().Contains(searchedStr.ToUpper())).ToListAsync();
+            return PartialView("_SearchPartialView",flowers);
+        }
+
     }
 }

@@ -165,6 +165,30 @@ namespace P512FiorelloBack.Migrations
                     b.ToTable("FlowerImages");
                 });
 
+            modelBuilder.Entity("P512FiorelloBack.Models.Layout", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("FacebookUrl")
+                        .HasColumnName("Facebook")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("InstagramUrl")
+                        .HasColumnName("Intagram")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Logo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Layouts");
+                });
+
             modelBuilder.Entity("P512FiorelloBack.Models.Position", b =>
                 {
                     b.Property<int>("Id")

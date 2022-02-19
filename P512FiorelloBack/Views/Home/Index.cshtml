@@ -9,7 +9,7 @@
 
 }
 @section Scripts{
-    <script src="~/assets/js/index.js" defer></script>
+    <script asp-append-version="true" src="~/assets/js/index.js" defer></script>
 }
 
 <header>
@@ -74,7 +74,7 @@
                 </div>
 
                 <div class="flowers col-lg-12 mt-4">
-                    @await Html.PartialAsync("_FlowersPartialView",Model.Flowers)
+                    @await Component.InvokeAsync("Flower");
 
                 </div>
             </div>
