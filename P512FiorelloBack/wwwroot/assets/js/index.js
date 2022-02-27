@@ -10,6 +10,9 @@ const sortClick = (e, name)=>{
 
 
 $(document).ready(function () {
+
+
+
   $(".fa-bars").click(function () {
     $(".side-menu").css({ width: "100%", transition: "0.3s" });
     $(".side-menu-item").addClass("animate__fadeInRight");

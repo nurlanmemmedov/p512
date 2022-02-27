@@ -1,4 +1,4 @@
-﻿@model List<Category>
+﻿@model List<Slider>
 @{
     ViewData["Title"] = "Index";
 }
@@ -22,7 +22,10 @@
                                             id
                                         </th>
                                         <th>
-                                            Name
+                                            Title
+                                        </th>
+                                        <th>
+                                            Image
                                         </th>
                                         <th>
                                             Actions
@@ -30,23 +33,26 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach (var category in Model)
+                                    @foreach (var slider in Model)
                                     {
-                                        <tr class="table-success">
-                                            <td>
-                                                @category.Id
-                                            </td>
-                                            <td>
-                                                @category.Name
-                                            </td>
-                                            <td>
-                                                <a class="btn btn-primary" asp-controller="Category" asp-action="Detail" asp-route-id="@category.Id">Detail</a>
-                                                <a class="btn btn-warning" asp-controller="Category" asp-action="Update" asp-route-id="@category.Id">Update</a>
-                                                <button class="btn btn-danger" id="DeleteCat" data-id="@category.Id">Delete</button>
+                                    <tr class="table-success">
+                                        <td>
+                                            @slider.Id
+                                        </td>
+                                        <td>
+                                            @Html.Raw(slider.Title)
+                                        </td>
+                                        <td>
+                                            <img src="~/assets/images/@slider.Image" style="width: 200px; height:200px" />
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-primary" asp-controller="Slider" asp-action="Detail" asp-route-id="@slider.Id">Detail</a>
+                                            <a class="btn btn-warning" asp-controller="Slider" asp-action="Update" asp-route-id="@slider.Id">Update</a>
+                                            <button class="btn btn-danger" id="DeleteCat" data-id="@slider.Id">Delete</button>
 
-                                            </td>
+                                        </td>
 
-                                        </tr>
+                                    </tr>
 
                                     }
                                 </tbody>
@@ -76,4 +82,4 @@
             })
         });
     </script>
-    }
+}

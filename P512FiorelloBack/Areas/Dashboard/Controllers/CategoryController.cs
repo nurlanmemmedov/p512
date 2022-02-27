@@ -48,5 +48,49 @@ namespace P512FiorelloBack.Areas.Dashboard.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        public async Task<IActionResult> Update(int id)
+        {
+            Category category = await _context.Categories.FindAsync(id);
+            if (category == null) return NotFound();
+            return View(category);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Update(int id, Category category)
+        {
+            bool isExist = await _context.Categories.AnyAsync(c => c.Id == id);
+            if (!isExist) return NotFound();
+
+            if (category == null) return NotFound();
+            if (id != category.Id) return BadRequest();
+            if (!ModelState.IsValid) return View();
+
+            _context.Categories.Update(category);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            Category category = await _context.Categories.FindAsync(id);
+            if (category == null) return NotFound();
+            return PartialView("_CategoryDeletePartial", category);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [ActionName("Delete")]
+        public async Task<IActionResult> DeleteCategory(int id)
+        {
+            Category category = await _context.Categories.FindAsync(id);
+            if (category == null) return NotFound();
+
+            _context.Categories.Remove(category);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+
     }
 }

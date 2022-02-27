@@ -308,3 +308,7 @@ C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\obj\Debug\netcoreap
 C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\obj\Debug\netcoreapp3.1\Razor\Areas\Dashboard\Views\Category\Detail.cshtml.g.cs
 C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\obj\Debug\netcoreapp3.1\Razor\Areas\Dashboard\Views\Category\Create.cshtml.g.cs
 C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\obj\Debug\netcoreapp3.1\Razor\Areas\Dashboard\Views\Shared\_ValidationPartial.cshtml.g.cs
+C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\obj\Debug\netcoreapp3.1\Razor\Areas\Dashboard\Views\Category\Update.cshtml.g.cs
+C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\obj\Debug\netcoreapp3.1\Razor\Areas\Dashboard\Views\Shared\_CategoryDeletePartial.cshtml.g.cs
+C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\obj\Debug\netcoreapp3.1\Razor\Areas\Dashboard\Views\Slider\Index.cshtml.g.cs
+C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\obj\Debug\netcoreapp3.1\Razor\Areas\Dashboard\Views\Slider\Create.cshtml.g.cs
