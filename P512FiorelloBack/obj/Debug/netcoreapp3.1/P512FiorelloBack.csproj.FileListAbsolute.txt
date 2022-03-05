@@ -312,3 +312,10 @@ C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\obj\Debug\netcoreap
 C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\obj\Debug\netcoreapp3.1\Razor\Areas\Dashboard\Views\Shared\_CategoryDeletePartial.cshtml.g.cs
 C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\obj\Debug\netcoreapp3.1\Razor\Areas\Dashboard\Views\Slider\Index.cshtml.g.cs
 C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\obj\Debug\netcoreapp3.1\Razor\Areas\Dashboard\Views\Slider\Create.cshtml.g.cs
+C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\obj\Debug\netcoreapp3.1\Razor\Areas\Dashboard\Views\Slider\Delete.cshtml.g.cs
+C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\obj\Debug\netcoreapp3.1\Razor\Areas\Dashboard\Views\Slider\CreateMultiple.cshtml.g.cs
+C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
