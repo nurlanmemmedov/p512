@@ -7,21 +7,8 @@
   <component name="ChangeListManager">
     <list default="true" id="faba6c62-c363-442c-b8bb-2be9171201cd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.vs/P512FiorelloBack/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/P512FiorelloBack/v16/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/P512FiorelloBack/P512FiorelloBack.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/P512FiorelloBack/P512FiorelloBack.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/P512FiorelloBack/P512FiorelloBack.csproj.user" beforeDir="false" afterPath="$PROJECT_DIR$/P512FiorelloBack/P512FiorelloBack.csproj.user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/P512FiorelloBack/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/P512FiorelloBack/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/P512FiorelloBack/ViewComponents/NavViewComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/P512FiorelloBack/ViewComponents/NavViewComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/P512FiorelloBack/bin/Debug/netcoreapp3.1/P512FiorelloBack.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/P512FiorelloBack/bin/Debug/netcoreapp3.1/P512FiorelloBack.Views.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/P512FiorelloBack/bin/Debug/netcoreapp3.1/P512FiorelloBack.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/P512FiorelloBack/bin/Debug/netcoreapp3.1/P512FiorelloBack.Views.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/P512FiorelloBack/bin/Debug/netcoreapp3.1/P512FiorelloBack.dll" beforeDir="false" afterPath="$PROJECT_DIR$/P512FiorelloBack/bin/Debug/netcoreapp3.1/P512FiorelloBack.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/P512FiorelloBack/bin/Debug/netcoreapp3.1/P512FiorelloBack.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/P512FiorelloBack/bin/Debug/netcoreapp3.1/P512FiorelloBack.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/P512FiorelloBack/obj/Debug/netcoreapp3.1/P512FiorelloBack.RazorCoreGenerate.cache" beforeDir="false" afterPath="$PROJECT_DIR$/P512FiorelloBack/obj/Debug/netcoreapp3.1/P512FiorelloBack.RazorCoreGenerate.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/P512FiorelloBack/obj/Debug/netcoreapp3.1/P512FiorelloBack.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/P512FiorelloBack/obj/Debug/netcoreapp3.1/P512FiorelloBack.Views.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/P512FiorelloBack/obj/Debug/netcoreapp3.1/P512FiorelloBack.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/P512FiorelloBack/obj/Debug/netcoreapp3.1/P512FiorelloBack.Views.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/P512FiorelloBack/obj/Debug/netcoreapp3.1/P512FiorelloBack.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/P512FiorelloBack/obj/Debug/netcoreapp3.1/P512FiorelloBack.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/P512FiorelloBack/obj/Debug/netcoreapp3.1/P512FiorelloBack.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/P512FiorelloBack/obj/Debug/netcoreapp3.1/P512FiorelloBack.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/P512FiorelloBack/obj/Debug/netcoreapp3.1/P512FiorelloBack.dll" beforeDir="false" afterPath="$PROJECT_DIR$/P512FiorelloBack/obj/Debug/netcoreapp3.1/P512FiorelloBack.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/P512FiorelloBack/obj/Debug/netcoreapp3.1/P512FiorelloBack.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/P512FiorelloBack/obj/Debug/netcoreapp3.1/P512FiorelloBack.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P512FiorelloBack/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/P512FiorelloBack/obj/project.packagespec.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +17,10 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3fc646410e40487bbd02a4559e4db0266ad90/1D/UserManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1e44ee1555f743a49e596537c0354b0f2c790/2/IdentityServiceCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="25KYsEgMMoLTbsrel88vMF7RoKI" />
   <component name="ProjectViewState">
@@ -83,13 +74,14 @@
       <option name="presentableId" value="Default" />
       <updated>1645277454189</updated>
       <workItem from="1645277486606" duration="122000" />
+      <workItem from="1646567045386" duration="124000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />

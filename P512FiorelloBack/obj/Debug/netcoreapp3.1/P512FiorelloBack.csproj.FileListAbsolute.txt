@@ -319,3 +319,8 @@ C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\bin\Debug\netcoreap
 C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
 C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\bin\Debug\netcoreapp3.1\MailKit.dll
+C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\bin\Debug\netcoreapp3.1\MimeKit.dll
+C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs

@@ -1,12 +1,15 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using P512FiorelloBack.Constants;
 using P512FiorelloBack.DAL;
+using P512FiorelloBack.Models;
+using P512FiorelloBack.Services;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -34,6 +37,17 @@ namespace P512FiorelloBack
                 options.IdleTimeout = TimeSpan.FromMinutes(30);
             });
 
+            services.AddIdentity<User, IdentityRole>(options =>
+            {
+                options.Password.RequiredLength = 5;
+                options.User.RequireUniqueEmail = true;
+                options.SignIn.RequireConfirmedEmail = true;
+            }).AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
+
+            services.Configure<MailSettings>(Configuration.GetSection("MailSettings"));
+
+            services.AddScoped<IMailService, MailService>();
+
             services.AddControllersWithViews();
             services.AddDbContext<AppDbContext>(option=> {
                 option.UseSqlServer(Configuration.GetConnectionString("Default"));
@@ -59,6 +73,8 @@ namespace P512FiorelloBack
             app.UseSession();
             app.UseRouting();
 
+
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

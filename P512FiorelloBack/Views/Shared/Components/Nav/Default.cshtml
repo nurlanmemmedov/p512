@@ -232,61 +232,73 @@
                     </div>
                 </div>
                 <div class="col-lg-2">
-                    <div class="additional-nav align-items-center justify-content-around">
-                        
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fas fa-search me-2"></i>
-                            </button>
-                            <ul id="search-result" class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><input id="search-input" /></li>
-                            </ul>
-                        </div>
-                        <div class="
-                  shop
-                  hoverBlock
-                  d-flex
-                  justify-content-around
-                  align-items-center
-                ">
-                            <i class="fas shopItem fa-shopping-bag me-3">
-                                <p class="countProduct">@ViewBag.Count</p>
-                            </i>
-                            <div class="cart hoverBlock shopItem d-flex align-items-center">
-                                <span id="cart" class="me-1">CART</span>
-                                <div class="price">($ <span class="totalPrice">0</span>)</div>
-                            </div>
-                            <div class="flower-container navbar-dropdown" style="width: 200px">
-                                <div class="flower-body" style="width: 200px">
-                                    <div id="flower-list" style="width: 200px">
-                                        @foreach (var item in Model.Basket)
-                                        {
 
-                                            <div style="width: 200px">
-                                                @item.Flower.Name <span>@item.Flower.Price $</span>
-                                            </div>
-                                        }
-                                    </div>
-                              
-                                    <div class="
-                        totalPriceDiv
-                        d-flex
-                        align-items-center
-                        justify-content-between
-                      ">
-                                        <span>TOTAL:</span>
-                                        <div class="priceWithCurrency">
-                                            <span>$</span>
-                                            <span class="totalPriceList">@ViewBag.TotalPrice</span>
+                    @if (!User.Identity.IsAuthenticated)
+                    {
+                        <a class="btn btn-primary" asp-controller="Account" asp-action="Login">Signin</a>
+                    }
+                    else
+                    {
+                        <a class="btn btn-primary" asp-controller="Account" asp-action="Logout">Logout</a>
+                    }
+
+                </div>
+                    @*<div class="col-lg-2">
+                <div class="additional-nav align-items-center justify-content-around">
+
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-search me-2"></i>
+                        </button>
+                        <ul id="search-result" class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><input id="search-input" /></li>
+                        </ul>
+                    </div>
+                    <div class="
+              shop
+              hoverBlock
+              d-flex
+              justify-content-around
+              align-items-center
+            ">
+                        <i class="fas shopItem fa-shopping-bag me-3">
+                            <p class="countProduct">@ViewBag.Count</p>
+                        </i>
+                        <div class="cart hoverBlock shopItem d-flex align-items-center">
+                            <span id="cart" class="me-1">CART</span>
+                            <div class="price">($ <span class="totalPrice">0</span>)</div>
+                        </div>
+                        <div class="flower-container navbar-dropdown" style="width: 200px">
+                            <div class="flower-body" style="width: 200px">
+                                <div id="flower-list" style="width: 200px">
+                                    @foreach (var item in Model.Basket)
+                                    {
+
+                                        <div style="width: 200px">
+                                            @item.Flower.Name <span>@item.Flower.Price $</span>
                                         </div>
+                                    }
+                                </div>
+
+                                <div class="
+                    totalPriceDiv
+                    d-flex
+                    align-items-center
+                    justify-content-between
+                  ">
+                                    <span>TOTAL:</span>
+                                    <div class="priceWithCurrency">
+                                        <span>$</span>
+                                        <span class="totalPriceList">@ViewBag.TotalPrice</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>*@
+                </div>
             </div>
-        </div>
     </nav>
 
     <div class="nav">
