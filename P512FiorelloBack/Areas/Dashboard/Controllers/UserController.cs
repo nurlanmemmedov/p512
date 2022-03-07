@@ -47,5 +47,93 @@ namespace P512FiorelloBack.Areas.Dashboard.Controllers
 
             return View(userList);
         }
+
+        public async Task<IActionResult> GetRoles(string id)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+            if (user == null) return NotFound();
+
+            var roles = await _userManager.GetRolesAsync(user);
+
+            ViewBag.Name = user.FullName;
+            ViewBag.UserId = user.Id;
+            return View(roles);
+        }
+
+        public async Task<IActionResult> RemoveRole(string id, string roleName)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+            if (user == null) return NotFound();
+            await _userManager.RemoveFromRoleAsync(user, roleName);
+
+            return RedirectToAction(nameof(GetRoles), new { user.Id });
+        }
+
+        public async Task<IActionResult> AddRole(string id)
+        {
+            var roles = await _dbContext.Roles.Select(r => r.Name).ToListAsync();
+
+            AddRoleVm model = new AddRoleVm
+            {
+                UserId = id,
+                Roles = roles
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AddRole(string id, AddRoleVm model)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+            if (user == null) return NotFound();
+
+            if (!ModelState.IsValid) return View(model);
+
+            await _userManager.AddToRoleAsync(user, model.RoleName);
+
+            return RedirectToAction(nameof(GetRoles), new { id });
+
+        }
+
+        public async Task<IActionResult> ChangePassword(string id)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+            if (user == null) return NotFound();
+            ViewBag.FullName = user.FullName;
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ChangePassword(string id, ChangePasswordVm model)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+            if (user == null) return NotFound();
+
+            if (!ModelState.IsValid) return View();
+
+            if(!await _userManager.CheckPasswordAsync(user, model.OldPassword))
+            {
+                ModelState.AddModelError(nameof(ChangePasswordVm.OldPassword), "Old Password is not correct");
+                return View();
+            }
+
+            var idResult = await _userManager.ChangePasswordAsync(user, model.OldPassword, model.NewPassword);
+
+            if (!idResult.Succeeded)
+            {
+                foreach (var error in idResult.Errors)
+                {
+                    ModelState.AddModelError("", error.Description);
+                }
+                return View();
+            }
+
+            return RedirectToAction(nameof(Index));
+
+        }
+
     }
 }

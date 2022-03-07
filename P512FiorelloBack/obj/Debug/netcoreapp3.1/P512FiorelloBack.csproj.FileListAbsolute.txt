@@ -325,3 +325,6 @@ C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\bin\Debug\netcoreap
 C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
 C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
 C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\obj\Debug\netcoreapp3.1\Razor\Areas\Dashboard\Views\User\Index.cshtml.g.cs
+C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\obj\Debug\netcoreapp3.1\Razor\Areas\Dashboard\Views\User\GetRoles.cshtml.g.cs
+C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\obj\Debug\netcoreapp3.1\Razor\Areas\Dashboard\Views\User\AddRole.cshtml.g.cs
+C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\obj\Debug\netcoreapp3.1\Razor\Areas\Dashboard\Views\User\ChangePassword.cshtml.g.cs
