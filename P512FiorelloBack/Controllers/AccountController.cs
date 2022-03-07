@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using P512FiorelloBack.Constants;
 using P512FiorelloBack.Models;
 using P512FiorelloBack.Services;
 using P512FiorelloBack.ViewModels;
@@ -93,17 +94,17 @@ namespace P512FiorelloBack.Controllers
                 return View();
             }
 
-            await _signinManager.SignInAsync(user, true);
+            await _userManager.AddToRoleAsync(newUser, RoleConstants.User);
 
-            //var token = await _userManager.GenerateEmailConfirmationTokenAsync(newUser);
-            //var link = Url.Action(nameof(ConfirmEmail), "Account", new { newUser.UserName, token }, Request.Scheme);
+            var token = await _userManager.GenerateEmailConfirmationTokenAsync(newUser);
+            var link = Url.Action(nameof(ConfirmEmail), "Account", new { newUser.UserName, token }, Request.Scheme);
 
-            //await _mailService.SendEmailAsync(new MailRequest
-            //{
-            //    ToEmail = newUser.Email,
-            //    Subject = "Complete registration",
-            //    Body = link
-            //});
+            await _mailService.SendEmailAsync(new MailRequest
+            {
+                ToEmail = newUser.Email,
+                Subject = "Complete registration",
+                Body = link
+            });
 
             return RedirectToAction("Index", "Home");
         }
