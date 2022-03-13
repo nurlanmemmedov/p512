@@ -8,7 +8,7 @@ namespace P512FiorelloBack.Areas.Dashboard.ViewModels
 {
     public class ChangePasswordVm
     {
-        [Required, DataType(DataType.Password)]
+        [Required, DataType(DataType.Password), MaxLength(15)]
         public string OldPassword { get; set; }
 
         [Required, DataType(DataType.Password)]

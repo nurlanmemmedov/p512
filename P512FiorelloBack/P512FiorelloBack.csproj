@@ -7,6 +7,8 @@
   <ItemGroup>
     <Compile Remove="Migrations\20220206141353_createdFlowerImagesAndCampaignsTables.cs" />
     <Compile Remove="Migrations\20220206141353_createdFlowerImagesAndCampaignsTables.Designer.cs" />
+    <Compile Remove="Migrations\20220312121416_AddCommentModel.cs" />
+    <Compile Remove="Migrations\20220312121416_AddCommentModel.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

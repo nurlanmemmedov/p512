@@ -186,6 +186,40 @@ namespace P512FiorelloBack.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("P512FiorelloBack.Models.Comment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("FlowerId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FlowerId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Comments");
+                });
+
             modelBuilder.Entity("P512FiorelloBack.Models.Expert", b =>
                 {
                     b.Property<int>("Id")
@@ -405,6 +439,9 @@ namespace P512FiorelloBack.Migrations
                     b.Property<string>("FullName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
 
@@ -503,6 +540,19 @@ namespace P512FiorelloBack.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("P512FiorelloBack.Models.Comment", b =>
+                {
+                    b.HasOne("P512FiorelloBack.Models.Flower", "Flower")
+                        .WithMany("Comments")
+                        .HasForeignKey("FlowerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("P512FiorelloBack.Models.User", "User")
+                        .WithMany("Comments")
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("P512FiorelloBack.Models.Expert", b =>

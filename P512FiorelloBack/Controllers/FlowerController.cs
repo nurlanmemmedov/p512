@@ -1,7 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using P512FiorelloBack.DAL;
 using P512FiorelloBack.Models;
+using P512FiorelloBack.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,12 +15,13 @@ namespace P512FiorelloBack.Controllers
     public class FlowerController : Controller
     {
         private readonly AppDbContext _context;
+        private readonly UserManager<User> _userManager;
 
-        public FlowerController(AppDbContext context)
+        public FlowerController(AppDbContext context, UserManager<User> userManager)
         {
+            _userManager = userManager;
             _context = context;
         }
-
 
         public IActionResult Index()
         {
@@ -26,11 +30,26 @@ namespace P512FiorelloBack.Controllers
 
         public IActionResult Detail(int id,int categoryId)
         {
-            Flower flower = _context.Flowers.Include(f => f.FlowerImages).Include(f => f.FlowerCategories).ThenInclude(fc => fc.Category).FirstOrDefault(f => f.Id == id);
+            Flower flower = _context.Flowers.Include(f => f.FlowerImages)
+                .Include(f => f.Comments)
+                .ThenInclude(c => c.User)
+                .Include(f => f.FlowerCategories)
+                .ThenInclude(fc => fc.Category).FirstOrDefault(f => f.Id == id);
+
             if (flower == null) return NotFound();
-            //ViewBag.Related = _context.FlowerCategories.Where(fc => fc.CategoryId == categoryId && fc.FlowerId!=flower.Id).Include(fc=>fc.Flower).ToList();
-            ViewBag.Related = _context.Flowers.Where(f => f.FlowerCategories.FirstOrDefault(fc => fc.CategoryId == categoryId).CategoryId == categoryId && f.Id != flower.Id).Include(f=>f.FlowerImages).Include(f=>f.FlowerCategories).ThenInclude(fc=>fc.Category).ToList();
-            return View(flower);
+            ViewBag.Related = _context.Flowers.Where(f => f.FlowerCategories
+                .FirstOrDefault(fc => fc.CategoryId == categoryId).
+                CategoryId == categoryId && f.Id != flower.Id)
+                .Include(f=>f.FlowerImages).Include(f=>f.FlowerCategories)
+                 .ThenInclude(fc=>fc.Category).ToList();
+
+
+            FlowerDetailViewModel model = new FlowerDetailViewModel
+            {
+                Flower = flower
+            };
+
+            return View(model);
         }
 
         public async Task<IActionResult> Search(string searchedStr)
@@ -42,6 +61,34 @@ namespace P512FiorelloBack.Controllers
             var flowers = await _context.Flowers.Where(f => f.Name.ToUpper().Contains(searchedStr.ToUpper())).ToListAsync();
             return PartialView("_SearchPartialView",flowers);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize]
+        public async Task<IActionResult> AddComment(int id, FlowerDetailViewModel model)
+        {
+            var flower = await _context.Flowers.Include(f => f.FlowerImages).Include(f => f.Comments).ThenInclude(c => c.User)
+                .Include(f => f.FlowerCategories).ThenInclude(fc => fc.Category).FirstOrDefaultAsync(f => f.Id == id);
+            if (flower == null) return NotFound();
+
+            if (!ModelState.IsValid) {
+                model.Flower = flower;
+                return View(model);
+            }
+
+            var comment = new Comment
+            {
+                Description = model.Comment.Description,
+                UserId = _userManager.GetUserId(User),
+                FlowerId = id
+            };
+
+            await _context.Comments.AddAsync(comment);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Detail), new { id });
+        }
+
 
     }
 }

@@ -11,5 +11,6 @@ namespace P512FiorelloBack.Areas.Dashboard.ViewModels
         public string Fullname { get; set; }
         public string Username { get; set; }
         public string Roles { get; set; }
+        public  bool IsActive { get; set; }
     }
 }

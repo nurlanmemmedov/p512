@@ -33,8 +33,15 @@ using P512FiorelloBack.Areas.Dashboard.ViewModels;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\Areas\Dashboard\Views\_ViewImports.cshtml"
+using P512FiorelloBack.Areas.Dashboard.ViewModels.Flower;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"69aca4e71622aaead8247468d29b2eb50a4acf82", @"/Areas/Dashboard/Views/Slider/Delete.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b254af245082f8b89460f03b70af82d839a47e66", @"/Areas/Dashboard/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c4935639a0a0449aca73f1a3af97803873852be2", @"/Areas/Dashboard/Views/_ViewImports.cshtml")]
     public class Areas_Dashboard_Views_Slider_Delete : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Slider>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("btn btn-secondary"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -98,7 +105,7 @@ using P512FiorelloBack.Areas.Dashboard.ViewModels;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n                        </p>\r\n                        <p class=\"text-danger\">are you sure to delete?</p>\r\n                    </div>\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "69aca4e71622aaead8247468d29b2eb50a4acf826004", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "69aca4e71622aaead8247468d29b2eb50a4acf826246", async() => {
                 WriteLiteral("Cancel");
             }
             );
@@ -115,7 +122,7 @@ using P512FiorelloBack.Areas.Dashboard.ViewModels;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "69aca4e71622aaead8247468d29b2eb50a4acf827262", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "69aca4e71622aaead8247468d29b2eb50a4acf827504", async() => {
                 WriteLiteral("<button class=\"btn btn-danger\">Allahhaqqi silirem</button>");
             }
             );

@@ -33,8 +33,15 @@ using P512FiorelloBack.Areas.Dashboard.ViewModels;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\Areas\Dashboard\Views\_ViewImports.cshtml"
+using P512FiorelloBack.Areas.Dashboard.ViewModels.Flower;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"db902328db137d807af3655aa57552dab244b421", @"/Areas/Dashboard/Views/User/GetRoles.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b254af245082f8b89460f03b70af82d839a47e66", @"/Areas/Dashboard/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c4935639a0a0449aca73f1a3af97803873852be2", @"/Areas/Dashboard/Views/_ViewImports.cshtml")]
     public class Areas_Dashboard_Views_User_GetRoles : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<string>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("btn btn-primary"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -92,7 +99,7 @@ using P512FiorelloBack.Areas.Dashboard.ViewModels;
 #line hidden
 #nullable disable
             WriteLiteral(" roles</h4>\r\n\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "db902328db137d807af3655aa57552dab244b4215615", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "db902328db137d807af3655aa57552dab244b4215857", async() => {
                 WriteLiteral("Add role");
             }
             );
@@ -156,7 +163,7 @@ using P512FiorelloBack.Areas.Dashboard.ViewModels;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n                                            </td>\r\n                                            <td>\r\n                                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "db902328db137d807af3655aa57552dab244b4219476", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "db902328db137d807af3655aa57552dab244b4219718", async() => {
                 WriteLiteral("Remove role");
             }
             );

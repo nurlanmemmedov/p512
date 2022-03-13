@@ -33,8 +33,15 @@ using P512FiorelloBack.Areas.Dashboard.ViewModels;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\Areas\Dashboard\Views\_ViewImports.cshtml"
+using P512FiorelloBack.Areas.Dashboard.ViewModels.Flower;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"472cc0c37555361d6649029e5fe664bc7c9558c4", @"/Areas/Dashboard/Views/Slider/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b254af245082f8b89460f03b70af82d839a47e66", @"/Areas/Dashboard/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c4935639a0a0449aca73f1a3af97803873852be2", @"/Areas/Dashboard/Views/_ViewImports.cshtml")]
     public class Areas_Dashboard_Views_Slider_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<Slider>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "CreateMultiple", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -81,7 +88,7 @@ using P512FiorelloBack.Areas.Dashboard.ViewModels;
 #line hidden
 #nullable disable
             WriteLiteral("<!-- Button trigger modal -->\r\n<!-- Modal -->\r\n\r\n\r\n<div class=\"main-panel\">\r\n    <div class=\"content-wrapper\">\r\n        <div class=\"row\">\r\n            <div class=\"col-lg-12 stretch-card\">\r\n                <div class=\"card\">\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "472cc0c37555361d6649029e5fe664bc7c9558c47433", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "472cc0c37555361d6649029e5fe664bc7c9558c47675", async() => {
                 WriteLiteral("Create multiple sliders");
             }
             );
@@ -146,7 +153,7 @@ using P512FiorelloBack.Areas.Dashboard.ViewModels;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n                                            </td>\r\n                                            <td>\r\n                                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "472cc0c37555361d6649029e5fe664bc7c9558c411128", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "472cc0c37555361d6649029e5fe664bc7c9558c411370", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -170,7 +177,7 @@ AddHtmlAttributeValue("", 2061, slider.Image, 2061, 13, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                            </td>\r\n                                            <td>\r\n                                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "472cc0c37555361d6649029e5fe664bc7c9558c412877", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "472cc0c37555361d6649029e5fe664bc7c9558c413119", async() => {
                 WriteLiteral("Detail");
             }
             );
@@ -204,7 +211,7 @@ AddHtmlAttributeValue("", 2061, slider.Image, 2061, 13, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "472cc0c37555361d6649029e5fe664bc7c9558c415471", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "472cc0c37555361d6649029e5fe664bc7c9558c415713", async() => {
                 WriteLiteral("Update");
             }
             );
@@ -238,7 +245,7 @@ AddHtmlAttributeValue("", 2061, slider.Image, 2061, 13, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "472cc0c37555361d6649029e5fe664bc7c9558c418065", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "472cc0c37555361d6649029e5fe664bc7c9558c418307", async() => {
                 WriteLiteral("Delete");
             }
             );

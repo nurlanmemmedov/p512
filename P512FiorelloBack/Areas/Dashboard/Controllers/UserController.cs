@@ -41,7 +41,8 @@ namespace P512FiorelloBack.Areas.Dashboard.Controllers
                     Id = user.Id,
                     Fullname = user.FullName,
                     Username = user.UserName,
-                    Roles = string.Join(", ", (await _userManager.GetRolesAsync(user)))
+                    Roles = string.Join(", ", (await _userManager.GetRolesAsync(user))),
+                    IsActive = user.IsActive
                 });
             }
 
@@ -134,6 +135,22 @@ namespace P512FiorelloBack.Areas.Dashboard.Controllers
             return RedirectToAction(nameof(Index));
 
         }
+
+
+        public async Task<IActionResult> ToggleBlockUser(string id)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+            if (user == null) return NotFound();
+
+            user.IsActive = !user.IsActive;
+
+            _dbContext.Users.Update(user);
+            await _dbContext.SaveChangesAsync();
+
+            return RedirectToAction("Index");
+        }
+
+
 
     }
 }

@@ -48,11 +48,24 @@
                                             <td>
                                                 <a class="btn btn-primary" asp-controller="User" asp-action="GetRoles" asp-route-id="@user.Id">Manage Roles</a>
                                                 <a class="btn btn-warning" asp-controller="User" asp-action="ChangePassword" asp-route-id="@user.Id">Change Password</a>
-                                                <a class="btn btn-danger" id="DeleteCat" data-id="">Block</a>
+                                                    <a class="btn btn-danger" asp-controller="User" asp-action="ToggleBlockUser" asp-route-id="@user.Id">
+                                                
+                                                        @if (user.IsActive)
+                                                        {
+                                                            <p>Block User</p>
+                                                        }
+                                                        else
+                                                        {
+                                                            <p>Unblock User</p>
+                                                        }
 
-                                            </td>
+                                                            </a>
+        
 
-                                        </tr>
+                                                    </td>
+        
+
+                                                </tr>
 
                                     }
                                 </tbody>

@@ -27,8 +27,10 @@ namespace P512FiorelloBack.Models
         public string Dimension { get; set; }
         public int? CampaignId { get; set; }
         public Campaign Campaign { get; set; }
+
         public List<FlowerImage> FlowerImages { get; set; }
         public List<FlowerCategory> FlowerCategories{ get; set; }
+        public List<Comment> Comments{ get; set; }
 
     }
 }

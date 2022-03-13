@@ -45,6 +45,13 @@ namespace P512FiorelloBack.Controllers
                 ModelState.AddModelError("", "Invalid credentials");
                 return View();
             }
+
+            if (!user.IsActive)
+            {
+                ModelState.AddModelError("", "Your account was blocked by admin");
+                return View();
+            }
+
             var signinResult = await _signinManager.PasswordSignInAsync(user, model.Password, model.RememberMe, false);
             if (!signinResult.Succeeded)
             {
@@ -81,7 +88,7 @@ namespace P512FiorelloBack.Controllers
                 UserName = model.Username,
                 Age = model.Age,
                 Email = model.Email,
-                Position = model.Position
+                Position = model.Position,
             };
 
             IdentityResult identityResult = await _userManager.CreateAsync(newUser, model.Password);
