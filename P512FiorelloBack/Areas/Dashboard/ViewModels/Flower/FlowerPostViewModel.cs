@@ -27,7 +27,7 @@ namespace P512FiorelloBack.Areas.Dashboard.ViewModels.Flower
         public string Dimension { get; set; }
         public IFormFile MainImage { get; set; }
         public IFormFile[] Images { get; set; }
-        public int CampaignId { get; set; }
+        public int? CampaignId { get; set; }
         public List<int> CategoryIds { get; set; }
 
 

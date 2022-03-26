@@ -332,3 +332,5 @@ C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\obj\Debug\netcoreap
 C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\obj\Debug\netcoreapp3.1\Razor\Areas\Dashboard\Views\Flower\Detail.cshtml.g.cs
 C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\obj\Debug\netcoreapp3.1\Razor\Areas\Dashboard\Views\Flower\Create.cshtml.g.cs
 C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\bin\Debug\netcoreapp3.1\libman.json
+C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\obj\Debug\netcoreapp3.1\Razor\Areas\Dashboard\Views\Flower\Update.cshtml.g.cs
+C:\Users\nmammadov\Desktop\P512FiorelloBack\P512FiorelloBack\obj\Debug\netcoreapp3.1\Razor\Areas\Dashboard\Views\Flower\Delete.cshtml.g.cs

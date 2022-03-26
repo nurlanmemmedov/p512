@@ -13,5 +13,6 @@ namespace P512FiorelloBack.Models
         public string Position { get; set; }
         public bool IsActive { get; set; } = true;
         public List<Comment> Comments { get; set; }
+        public List<Flower> Flowers { get; set; }
     }
 }

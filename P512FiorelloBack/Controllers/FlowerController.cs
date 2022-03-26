@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using P512FiorelloBack.DAL;
 using P512FiorelloBack.Models;
+using P512FiorelloBack.Services;
 using P512FiorelloBack.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -16,11 +17,13 @@ namespace P512FiorelloBack.Controllers
     {
         private readonly AppDbContext _context;
         private readonly UserManager<User> _userManager;
+        private readonly IMailService _mailService;
 
-        public FlowerController(AppDbContext context, UserManager<User> userManager)
+        public FlowerController(AppDbContext context, UserManager<User> userManager, IMailService mailService)
         {
             _userManager = userManager;
             _context = context;
+            _mailService = mailService;
         }
 
         public IActionResult Index()
@@ -67,7 +70,7 @@ namespace P512FiorelloBack.Controllers
         [Authorize]
         public async Task<IActionResult> AddComment(int id, FlowerDetailViewModel model)
         {
-            var flower = await _context.Flowers.Include(f => f.FlowerImages).Include(f => f.Comments).ThenInclude(c => c.User)
+            var flower = await _context.Flowers.Include(f => f.User).Include(f => f.FlowerImages).Include(f => f.Comments).ThenInclude(c => c.User)
                 .Include(f => f.FlowerCategories).ThenInclude(fc => fc.Category).FirstOrDefaultAsync(f => f.Id == id);
             if (flower == null) return NotFound();
 
@@ -85,6 +88,13 @@ namespace P512FiorelloBack.Controllers
 
             await _context.Comments.AddAsync(comment);
             await _context.SaveChangesAsync();
+
+            await _mailService.SendEmailAsync(new MailRequest
+            {
+                ToEmail = flower.User.Email,
+                Subject = "New Comment",
+                Body = $"new comment to your {flower.Name} flower: {comment.Description}"
+            });
 
             return RedirectToAction(nameof(Detail), new { id });
         }
